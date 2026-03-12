@@ -1,5 +1,7 @@
 package com.hotelbookingapi.hotel_booking_api.controller;
 
+import com.hotelbookingapi.hotel_booking_api.model.Booking;
+import com.hotelbookingapi.hotel_booking_api.service.BookingService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

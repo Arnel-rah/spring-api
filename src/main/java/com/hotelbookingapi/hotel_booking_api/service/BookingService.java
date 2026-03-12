@@ -1,7 +1,7 @@
 package com.hotelbookingapi.hotel_booking_api.service;
 
 
-import com.hotel.api.model.Booking;
+import com.hotelbookingapi.hotel_booking_api.model.Booking;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,13 +17,9 @@ public class BookingService {
     }
 
     public Booking addBooking(Booking booking) {
-
-        // Vérifier numéro chambre
         if (booking.getRoomNumber() < 1 || booking.getRoomNumber() > 9) {
             throw new IllegalArgumentException("Room numbers must be between 1 and 9");
         }
-
-        // Vérifier disponibilité
         for (Booking b : bookings) {
             if (b.getRoomNumber() == booking.getRoomNumber()
                     && b.getBookingDate().equals(booking.getBookingDate())) {
